@@ -1,3 +1,3 @@
-module github.com/ingit-io/ingit-go
+module github.com/ingr-io/ingr-go
 
 go 1.18.0
