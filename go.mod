@@ -1,3 +1,3 @@
 module github.com/ingr-io/ingr-go
 
-go 1.18
+go 1.27.0
