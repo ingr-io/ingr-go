@@ -24,5 +24,7 @@ jobs:
     - name: Build
       run: go build -v ./...
 
-    - name: Test
-      run: go test -v ./...
+    - name: Test with 100% statement coverage gate
+      run: |
+        go test -v -coverprofile=coverage.out ./...
+        awk 'NR>1 && $NF==0 {print; bad=1} END{exit bad}' coverage.out

@@ -2,7 +2,6 @@ package ingr
 
 import (
 	"bytes"
-	"io"
 	"strings"
 )
 
@@ -30,9 +29,6 @@ func Validate(data []byte) error {
 	for dec.More() {
 		var m map[string]any
 		if err := dec.Decode(&m); err != nil {
-			if err == io.EOF {
-				break
-			}
 			return err
 		}
 	}
